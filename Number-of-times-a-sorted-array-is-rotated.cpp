@@ -1,3 +1,4 @@
+// Array is right rotated.
 // Sorted array - 1,2,3,4,5,6,7,8
 // Rotated Sorted array - 5,6,7,8,1,2,3,4
 // In sorted array, when it is 0 times rotated, minimum index is at 0th index.
