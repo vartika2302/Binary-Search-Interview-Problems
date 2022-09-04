@@ -42,14 +42,30 @@ private:
     
 public:
     vector<int> targetIndices(vector<int>& nums, int target) {
-        sort(nums.begin(),nums.end());
+        // sort(nums.begin(),nums.end());
+        // vector<int>res;
+        // int n = nums.size();
+        // int s=firstPos(nums,target,n);
+        // if(s==-1) return res;
+        // int e=lastPos(nums,target,n);
+        // for(int k=s;k<=e;k++){
+        //     res.push_back(k);
+        // }
+        // return res;
+        
+        
+        
+        // Optimal Solution using counting sort
         vector<int>res;
-        int n = nums.size();
-        int s=firstPos(nums,target,n);
-        if(s==-1) return res;
-        int e=lastPos(nums,target,n);
-        for(int k=s;k<=e;k++){
-            res.push_back(k);
+        int cnt=0;
+        int rank=0;
+        for(auto el:nums){
+            cnt+=el==target;
+            rank+=el<target;
+        }
+        while(cnt--){
+            res.push_back(rank);
+            rank++;
         }
         return res;
     }
